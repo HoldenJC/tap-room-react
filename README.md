@@ -22,7 +22,7 @@ An website front-end made for Epicodus React independent project #1 that lists a
 
 ## Component Diagram
 
-![alt-text](http://)
+![alt-text](https://github.com/HoldenJC/tap-room-react/blob/master/component-diagram.png)
 
 ## Known Bugs
 * No known bugs at this time.
