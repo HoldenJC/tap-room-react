@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Card from 'react-bootstrap/Card';
 
 function Keg(props){
   return (
@@ -9,9 +10,13 @@ function Keg(props){
             background-color: grey;
           }
         `}</style>
-      <h3>{props.brand} - {props.name}</h3>
-      <p><em>{props.price}</em></p>
-      <p>{props.alcoholContent}</p>
+      <Card>
+        <Card.Body>
+          <h3>{props.brand} - {props.name}</h3>
+          <p><em>{props.price}</em></p>
+          <p>{props.alcoholContent}</p>
+        </Card.Body>
+      </Card>
       <hr/>
     </div>
   );
