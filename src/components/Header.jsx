@@ -8,8 +8,10 @@ function Header() {
   };
   return (
     <div>
-      <h1><img style={headerStyles} src={logo} /> Tap Room</h1>
+      <img style={headerStyles} src={logo} />
+      <h1> Tap Room</h1>
       <Link to="/">Home</Link> | <Link to="/newkeg">Create New Keg</Link>
+      <hr />
     </div>
   );
 }

@@ -6,7 +6,11 @@ function Keg(props){
     <div>
       <style global jsx>{`
           div {
-            background-color: grey;
+            display: block;
+            margin: auto;
+            background-color: white;
+            text-align: center;
+            width: 75vw;
           }
         `}</style>
       <h3>{props.brand} - {props.name}</h3>
