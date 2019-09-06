@@ -4,7 +4,8 @@ import logo from '../assets/images/logo.png';
 
 function Header() {
   var headerStyles = {
-    width: '200px'
+    width: '200px',
+    marginTop: '2vh'
   };
   return (
     <div>

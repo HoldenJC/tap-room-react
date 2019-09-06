@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Keg(props){
+  var colorCode = {
+    color: props.alcoholContent > 5 ? 'red' : 'green'
+  };
   return (
     <div>
       <style global jsx>{`
@@ -13,9 +16,10 @@ function Keg(props){
             width: 75vw;
           }
         `}</style>
-      <h3>{props.brand} - {props.name}</h3>
-      <p><em>{props.price}</em></p>
-      <p>{props.alcoholContent}</p>
+      <h3>{props.brand}</h3>
+      <h4>{props.name}</h4>
+      <p><em>Price: ${props.price}</em></p>
+      <p style={colorCode}>ABV: {props.alcoholContent}%</p>
       <hr/>
     </div>
   );
@@ -24,8 +28,8 @@ function Keg(props){
 Keg.propTypes = {
   brand: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
-  alcoholContent: PropTypes.string.isRequired
+  price: PropTypes.number.isRequired,
+  alcoholContent: PropTypes.number.isRequired
 };
 
 export default Keg;

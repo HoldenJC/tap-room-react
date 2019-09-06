@@ -5,20 +5,20 @@ var masterKegList = [
   {
     brand: 'Natural',
     name: 'Natty Light',
-    price: '$0.25',
-    alcoholContent: '5.0%'
+    price: 0.25,
+    alcoholContent: 5.0
   },
   {
     brand: 'Guinness',
     name: 'Guinness Stout',
-    price: '$6.75',
-    alcoholContent: '7.5%'
+    price: 6.75,
+    alcoholContent: 7.5
   },
   {
     brand: 'Scott & Irela\'s',
     name: 'Straight Scotch (Beer)',
-    price: 'Market value',
-    alcoholContent: '9.1%'
+    price: 12.02,
+    alcoholContent: 9.1
   }
 ];
 
