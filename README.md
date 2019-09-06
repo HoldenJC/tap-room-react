@@ -20,6 +20,10 @@ An website front-end made for Epicodus React independent project #1 that lists a
 
 * _Open a web browser and navigate to [localhost:8080](localhost:8080)_
 
+## Component Diagram
+
+![alt-text](http://)
+
 ## Known Bugs
 * No known bugs at this time.
 
