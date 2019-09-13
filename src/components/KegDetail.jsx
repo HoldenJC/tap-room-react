@@ -12,6 +12,7 @@ function KegDetail(props) {
       <h2>Submitted {props.selectedKeg.formattedWaitTime} ago</h2>
       <p style={colorCode}>ABV: {props.selectedKeg.alcoholContent}%</p>
       <h4><em>{props.selectedKeg.price}</em></h4>
+      <h5>{props.selectedKeg.flavorDesc}</h5>
       <hr />
     </div>
   );

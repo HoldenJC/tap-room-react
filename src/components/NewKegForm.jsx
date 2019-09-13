@@ -8,14 +8,16 @@ function NewKegForm(props) {
   let _name = null;
   let _price = null;
   let _alcoholContent = null;
+  let _flavorDesc = null;
 
   function handleNewKegFormSubmission(event) {
     event.preventDefault();
-    props.onNewKegCreation({ brand: _brand.value, name: _name.value, price: _price.value, alcoholContent: _alcoholContent.value, timeOpen: new Moment() });
+    props.onNewKegCreation({ brand: _brand.value, name: _name.value, price: _price.value, alcoholContent: _alcoholContent.value, flavorDesc: _flavorDesc.value, timeOpen: new Moment() });
     _brand.value = '';
     _name.value = '';
     _price.value = '';
     _alcoholContent.value = '';
+    _flavorDesc.value = '';
     
   }
 
@@ -34,14 +36,20 @@ function NewKegForm(props) {
           ref={(input) => { _name = input; }} />
         <input
           type='number'
+          step='0.01'
           id='price'
           placeholder='Enter your price'
           ref={(input) => { _price = input; }} />
         <input
           type='number'
+          step='0.1'
           id='alcoholContent'
           placeholder='ABV %'
           ref={(input) => { _alcoholContent = input; }} />
+        <textarea
+          id='flavorDesc'
+          placeholder='Describe the flavor experience'
+          ref={(textarea) => { _flavorDesc = textarea; }} />
         <button type='submit'>Add Beer</button>
       </form>
     </div>

@@ -32,6 +32,7 @@ Keg.propTypes = {
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   alcoholContent: PropTypes.number.isRequired,
+  flavorDesc: PropTypes.string.isRequired,
   formattedWaitTime: PropTypes.string.isRequired,
   currentRouterPath: PropTypes.string,
   onKegSelection: PropTypes.func,
