@@ -1,6 +1,6 @@
 # Tap Room
 
-#### _Tap Room Project, 9/6/2019_
+#### _Tap Room Project, 9/6/2019 & 9/13/2019_
 
 #### By **Holden Clark**
 
