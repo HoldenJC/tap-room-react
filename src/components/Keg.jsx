@@ -7,9 +7,10 @@ function Keg(props) {
   };
   const kegInformation =
     <div>
-      <h3>{props.name} - {props.brand}</h3>
-      <h4>{props.formattedWaitTime} ago</h4>
+      <h3>{props.brand} - {props.name}</h3>
+      <h4>Beer added {props.formattedWaitTime} ago</h4>
       <p style={colorCode}>ABV: {props.alcoholContent}%</p>
+      <h4><em>${props.price}</em></h4>
       <hr />
     </div>;
   if (props.currentRouterPath === '/admin') {
