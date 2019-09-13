@@ -7,9 +7,10 @@ function KegList(props) {
     <div>
       {Object.keys(props.kegList).map(function (kegId) {
         var keg = props.kegList[kegId];
-        return <Keg names={keg.names}
-          location={keg.location}
-          issue={keg.issue}
+        return <Keg brand={keg.brand}
+          name={keg.name}
+          price={keg.price}
+          alcoholContent={keg.alcoholContent}
           formattedWaitTime={keg.formattedWaitTime}
           currentRouterPath={props.currentRouterPath}
           key={kegId}

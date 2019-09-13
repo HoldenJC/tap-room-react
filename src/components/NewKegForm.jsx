@@ -4,16 +4,19 @@ import Moment from 'moment';
 
 function NewKegForm(props) {
 
-  let _names = null;
-  let _location = null;
-  let _issue = null;
+  let _brand = null;
+  let _name = null;
+  let _price = null;
+  let _alcoholContent = null;
 
   function handleNewKegFormSubmission(event) {
     event.preventDefault();
-    props.onNewKegCreation({ names: _names.value, location: _location.value, issue: _issue.value, timeOpen: new Moment() });
-    _names.value = '';
-    _location.value = '';
-    _issue.value = '';
+    props.onNewKegCreation({ brand: _brand.value, name: _name.value, price: _price.value, alcoholContent: _alcoholContent.value, timeOpen: new Moment() });
+    _brand.value = '';
+    _name.value = '';
+    _price.value = '';
+    _alcoholContent.value = '';
+    
   }
 
   return (
@@ -21,19 +24,25 @@ function NewKegForm(props) {
       <form onSubmit={handleNewKegFormSubmission}>
         <input
           type='text'
-          id='names'
-          placeholder='Pair Names'
-          ref={(input) => { _names = input; }} />
+          id='brand'
+          placeholder='Brand'
+          ref={(input) => { _brand = input; }} />
         <input
           type='text'
-          id='location'
-          placeholder='Location'
-          ref={(input) => { _location = input; }} />
-        <textarea
-          id='issue'
-          placeholder='Describe your issue.'
-          ref={(textarea) => { _issue = textarea; }} />
-        <button type='submit'>Help!</button>
+          id='name'
+          placeholder='Beer Name'
+          ref={(input) => { _name = input; }} />
+        <input
+          type='number'
+          id='price'
+          placeholder='Enter your price'
+          ref={(input) => { _price = input; }} />
+        <input
+          type='number'
+          id='alcoholContent'
+          placeholder='ABV %'
+          ref={(input) => { _alcoholContent = input; }} />
+        <button type='submit'>Add Beer</button>
       </form>
     </div>
   );

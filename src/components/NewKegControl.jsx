@@ -1,8 +1,8 @@
 import React from 'react';
 import AgeVerification from './AgeVerification';
+import AgeRestricted from './AgeRestricted';
 import NewKegForm from './NewKegForm';
 import PropTypes from 'prop-types';
-import AgeRestricted from './AgeRestricted';
 
 class NewKegControl extends React.Component {
 
@@ -12,6 +12,7 @@ class NewKegControl extends React.Component {
       formVisibleOnPage: 0
     };
     this.handleAgeVerification = this.handleAgeVerification.bind(this);
+    this.handleAgeRestricted = this.handleAgeRestricted.bind(this);
   }
 
   handleAgeVerification() {
@@ -19,7 +20,7 @@ class NewKegControl extends React.Component {
   }
 
   handleAgeRestricted() {
-    this.setState({ formVisibleOnPage: -1 });
+    this.setState({ formVisibleOnPage: 2 });
   }
 
   render() {
@@ -28,7 +29,7 @@ class NewKegControl extends React.Component {
       currentlyVisibleContent = <NewKegForm onNewKegCreation={this.props.onNewKegCreation} />;
     } else if(this.state.formVisibleOnPage === 0) {
       currentlyVisibleContent = <AgeVerification onAgeVerification={this.handleAgeVerification} />;
-    } else {
+    } else if(this.state.formVisibleOnPage === 2){
       currentlyVisibleContent = <AgeRestricted onAgeRestricted={this.handleAgeRestricted} />;
     }
     return (
