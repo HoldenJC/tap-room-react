@@ -6,7 +6,7 @@
 
 ## Description
 
-An website front-end made for Epicodus React independent project #1 that lists available kegs at a fictional tap room / bar.
+A website front-end made for Epicodus React independent project #1 & #2 that lists available kegs at a fictional tap room / bar.
 
 ## Setup/Installation Requirements
 
@@ -18,7 +18,10 @@ An website front-end made for Epicodus React independent project #1 that lists a
 
 > npm run start
 
-* _Open a web browser and navigate to [localhost:8080](localhost:8080)_
+* _Open a web browser and navigate to [localhost:8080](http://localhost:8080) to view website_
+
+* _Add '/admin' to end of default URL to view website with admin rights [localhost:8080](http://localhost:8080/admin)_
+
 
 ## Component Diagram
 
