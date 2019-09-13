@@ -1,6 +1,5 @@
 import React from 'react';
 import AgeVerification from './AgeVerification';
-import AgeRestricted from './AgeRestricted';
 import NewKegForm from './NewKegForm';
 import PropTypes from 'prop-types';
 
@@ -12,15 +11,15 @@ class NewKegControl extends React.Component {
       formVisibleOnPage: 0
     };
     this.handleAgeVerification = this.handleAgeVerification.bind(this);
-    this.handleAgeRestricted = this.handleAgeRestricted.bind(this);
   }
 
-  handleAgeVerification() {
-    this.setState({ formVisibleOnPage: 1 });
-  }
-
-  handleAgeRestricted() {
-    this.setState({ formVisibleOnPage: 2 });
+  handleAgeVerification(ageValid) {
+    if(ageValid === 1){
+      this.setState({ formVisibleOnPage: 1 });
+    } else if(ageValid === 2){
+      this.setState({ formVisibleOnPage: 2 });
+    }
+    
   }
 
   render() {
@@ -30,7 +29,10 @@ class NewKegControl extends React.Component {
     } else if(this.state.formVisibleOnPage === 0) {
       currentlyVisibleContent = <AgeVerification onAgeVerification={this.handleAgeVerification} />;
     } else if(this.state.formVisibleOnPage === 2){
-      currentlyVisibleContent = <AgeRestricted onAgeRestricted={this.handleAgeRestricted} />;
+      currentlyVisibleContent = <div>
+        <p>Thank you for visiting, but you are not old enough to interact with this website.</p>
+        <p>Please leave now. Feel free to return once you are 21 years or older!</p>
+      </div>;
     }
     return (
       <div>

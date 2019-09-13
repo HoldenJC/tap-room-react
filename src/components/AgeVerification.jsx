@@ -5,15 +5,14 @@ function AgeVerification(props) {
   return (
     <div>
       <p>Are you 21 years of age or older?</p>
-      <button onClick={props.onAgeVerification}>Yes</button>
-      <button onClick={props.onAgeRestricted}>No</button>
+      <button onClick={() => props.onAgeVerification(1)}>Yes</button>
+      <button onClick={() => props.onAgeVerification(2)}>No</button>
     </div>
   );
 }
 
 AgeVerification.propTypes = {
-  onAgeVerification: PropTypes.func,
-  onAgeRestricted: PropTypes.func
+  onAgeVerification: PropTypes.func
 };
 
 export default AgeVerification; 
