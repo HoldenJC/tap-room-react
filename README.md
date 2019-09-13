@@ -20,7 +20,7 @@ A website front-end made for Epicodus React independent project #1 & #2 that lis
 
 * _Open a web browser and navigate to [localhost:8080](http://localhost:8080) to view website_
 
-* _Add '/admin' to end of default URL to view website with admin rights [localhost:8080](http://localhost:8080/admin)_
+* _Add '/admin' to end of default URL to view website with admin rights [localhost:8080/admin](http://localhost:8080/admin)_
 
 
 ## Component Diagram
