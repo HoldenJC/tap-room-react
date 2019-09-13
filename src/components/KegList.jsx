@@ -1,39 +1,29 @@
 import React from 'react';
 import Keg from './Keg';
+import PropTypes from 'prop-types';
 
-var masterKegList = [
-  {
-    brand: 'Natural',
-    name: 'Natty Light',
-    price: 0.25,
-    alcoholContent: 5.0
-  },
-  {
-    brand: 'Guinness',
-    name: 'Guinness Stout',
-    price: 6.75,
-    alcoholContent: 7.5
-  },
-  {
-    brand: 'Scott & Irela\'s',
-    name: 'Straight Scotch (Beer)',
-    price: 12.02,
-    alcoholContent: 9.1
-  }
-];
-
-function KegList(){
+function KegList(props) {
   return (
     <div>
-      {masterKegList.map((keg, index) =>
-        <Keg brand={keg.brand}
-          name={keg.name}
-          price={keg.price}
-          alcoholContent={keg.alcoholContent}
-          key={index}/>
-      )}
+      {Object.keys(props.kegList).map(function (kegId) {
+        var keg = props.kegList[kegId];
+        return <Keg names={keg.names}
+          location={keg.location}
+          issue={keg.issue}
+          formattedWaitTime={keg.formattedWaitTime}
+          currentRouterPath={props.currentRouterPath}
+          key={kegId}
+          kegId={kegId}
+          onKegSelection={props.onKegSelection} />;
+      })}
     </div>
   );
 }
+
+KegList.propTypes = {
+  kegList: PropTypes.object,
+  currentRouterPath: PropTypes.string,
+  onKegSelection: PropTypes.func
+};
 
 export default KegList;

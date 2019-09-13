@@ -1,38 +1,47 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import Moment from 'moment';
 
-function NewKegForm() {
+function NewKegForm(props) {
+
+  let _names = null;
+  let _location = null;
+  let _issue = null;
+
+  function handleNewKegFormSubmission(event) {
+    event.preventDefault();
+    props.onNewKegCreation({ names: _names.value, location: _location.value, issue: _issue.value, timeOpen: new Moment() });
+    _names.value = '';
+    _location.value = '';
+    _issue.value = '';
+  }
+
   return (
     <div>
-      <style global jsx>{`
-          div {
-            display: block;
-            margin: auto;
-            background-color: white;
-            text-align: center;
-            width: 75vw;
-          }
-        `}</style>
-      <form>
+      <form onSubmit={handleNewKegFormSubmission}>
         <input
           type='text'
-          id='brand'
-          placeholder='Brand' />
+          id='names'
+          placeholder='Pair Names'
+          ref={(input) => { _names = input; }} />
         <input
           type='text'
-          id='name'
-          placeholder='Beer Name' />
-        <input
-          type='text'
-          id='price'
-          placeholder='Price' />
-        <input
-          type='text'
-          id='alcoholContent'
-          placeholder='Alcohol Content' />
-        <button type='submit'>Confirm Keg</button>
+          id='location'
+          placeholder='Location'
+          ref={(input) => { _location = input; }} />
+        <textarea
+          id='issue'
+          placeholder='Describe your issue.'
+          ref={(textarea) => { _issue = textarea; }} />
+        <button type='submit'>Help!</button>
       </form>
     </div>
   );
+
 }
+
+NewKegForm.propTypes = {
+  onNewKegCreation: PropTypes.func
+};
 
 export default NewKegForm;

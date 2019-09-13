@@ -1,35 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Keg(props){
-  var colorCode = {
-    color: props.alcoholContent > 5 ? 'red' : 'green'
-  };
-  return (
+function Keg(props) {
+  const kegInformation =
     <div>
-      <style global jsx>{`
-          div {
-            display: block;
-            margin: auto;
-            background-color: white;
-            text-align: center;
-            width: 75vw;
-          }
-        `}</style>
-      <h3>{props.brand}</h3>
-      <h4>{props.name}</h4>
-      <p><em>Price: ${props.price}</em></p>
-      <p style={colorCode}>ABV: {props.alcoholContent}%</p>
-      <hr/>
-    </div>
-  );
+      <h3>{props.location} - {props.names}</h3>
+      <h4>{props.formattedWaitTime} ago</h4>
+      <hr />
+    </div>;
+  if (props.currentRouterPath === '/admin') {
+    return (
+      <div onClick={() => { props.onKegSelection(props.kegId); }}>
+        {kegInformation}
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        {kegInformation}
+      </div>
+    );
+  }
 }
 
 Keg.propTypes = {
-  brand: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  alcoholContent: PropTypes.number.isRequired
+  names: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  issue: PropTypes.string,
+  formattedWaitTime: PropTypes.string.isRequired,
+  currentRouterPath: PropTypes.string,
+  onKegSelection: PropTypes.func,
+  kegId: PropTypes.string.isRequired
 };
 
 export default Keg;

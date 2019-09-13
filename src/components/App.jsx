@@ -4,7 +4,6 @@ import KegList from './KegList';
 import NewKegControl from './NewKegControl';
 import Error404 from './Error404';
 import { Switch, Route } from 'react-router-dom';
-import Moment from 'moment';
 import Admin from './Admin';
 import { v4 } from 'uuid';
 
@@ -23,7 +22,7 @@ class App extends React.Component {
   componentDidMount() {
     this.waitTimeUpdateTimer = setInterval(() =>
       this.updateKegElapsedWaitTime(),
-      60000
+    60000
     );
   }
 
@@ -55,6 +54,15 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <style global jsx>{`
+          div {
+            display: block;
+            margin: auto;
+            background-color: white;
+            text-align: center;
+            width: 75vw;
+          }
+        `}</style>
         <Header />
         <Switch>
           <Route exact path='/' render={() => <KegList kegList={this.state.masterKegList} />} />
