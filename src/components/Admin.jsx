@@ -10,7 +10,6 @@ function Admin(props) {
   }
   return (
     <div>
-      <h2>Admin</h2>
       {optionalSelectedKegContent}
       <KegList
         kegList={props.kegList}

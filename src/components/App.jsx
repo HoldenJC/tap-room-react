@@ -62,6 +62,9 @@ class App extends React.Component {
             text-align: center;
             width: 75vw;
           }
+          input {
+            margin-bottom: 15px;
+          }
         `}</style>
         <Header />
         <Switch>

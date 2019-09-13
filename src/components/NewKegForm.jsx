@@ -46,10 +46,11 @@ function NewKegForm(props) {
           id='alcoholContent'
           placeholder='ABV %'
           ref={(input) => { _alcoholContent = input; }} />
-        <textarea
+        <input
+          type='text'
           id='flavorDesc'
-          placeholder='Describe the flavor experience'
-          ref={(textarea) => { _flavorDesc = textarea; }} />
+          placeholder='Describe the flavor'
+          ref={(input) => { _flavorDesc = input; }} />
         <button type='submit'>Add Beer</button>
       </form>
     </div>
